@@ -1,5 +1,7 @@
 package com.example.webview;
 
+import com.example.Config.Config;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,12 +14,12 @@ public class MainActivity extends Activity {
 	WebView webView;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) { //R = Resource
+	protected void onCreate(Bundle savedInstanceState) { 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		webView = (WebView) findViewById(R.id.webView);
-		webView.loadUrl("http://172.20.10.4:8090/mju/"); //url도 Configuration 으로 빼기
+		webView.loadUrl(Config.url); 
 		webView.setWebViewClient(new MyWebViewClient());
 	}
 	
